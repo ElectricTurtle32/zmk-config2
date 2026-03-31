@@ -4,11 +4,23 @@
 
 #include "lilykey.dtsi"
 
-&kscan {
-    // Replace these comments with the GPIO pins in the matrix for the left side.
-    // See https://zmk.dev/docs/development/hardware-integration/new-shield#shield-overlays
+&kscan0 {
+    diode-direction = "col2row";
+
+    row-gpios
+        = <&xiao_d  6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // ROW0 (P1.11)
+        , <&xiao_d  7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // ROW1 (P1.12)
+        , <&xiao_d  8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // ROW2 (P1.13)
+        , <&xiao_d  9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // ROW3 (P1.14)
+        , <&xiao_d 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // ROW4 (P1.15)
+        ;
+
     col-gpios
-        = <&xiao_d 0 GPIO_ACTIVE_HIGH>
-        , <&xiao_d 0 GPIO_ACTIVE_HIGH>
+        = <&xiao_d  5 GPIO_ACTIVE_HIGH> // COL0 (P0.05)
+        , <&xiao_d  4 GPIO_ACTIVE_HIGH> // COL1 (P0.04)
+        , <&xiao_d  3 GPIO_ACTIVE_HIGH> // COL2 (P0.29)
+        , <&xiao_d  2 GPIO_ACTIVE_HIGH> // COL3 (P0.28)
+        , <&xiao_d  1 GPIO_ACTIVE_HIGH> // COL4 (P0.03)
+        , <&xiao_d  0 GPIO_ACTIVE_HIGH> // COL5 (P0.02)
         ;
 };
