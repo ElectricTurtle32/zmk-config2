@@ -23,3 +23,5 @@ include:
     shield: lilykey_left
   - board: seeeduino_xiao
     shield: lilykey_right
+  - board: seeeduino_xiao_ble
+    shield: hummingbird
